@@ -51,6 +51,7 @@
 </div>
 
 <style>
+	/** Just an example of how we can work with styles. Color must be imported from theme */
 	.divider {
 		height: 0.5rem;
 		background-color: #0b0b17;
