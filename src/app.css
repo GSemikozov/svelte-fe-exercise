@@ -1,2 +1,8 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+
+@theme {
+	--color-black: rgb(16, 16, 32);
+	--color-surface-100: rgb(26, 26, 41);
+	--color-surface-200: #ffffff0a;
+	--color-text-secondary: #6c6c77;
+}
