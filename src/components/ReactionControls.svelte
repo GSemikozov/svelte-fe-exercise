@@ -19,13 +19,13 @@
 		'party-popper'
 	]; // add all?
 
-	let liked = currentReactions.some((r) => r.type === 'heart');
-
 	// Popover logic
 	let showPopover = false;
 	let wrapperRef: HTMLDivElement;
 	let popoverRef: HTMLDivElement;
 	let position: 'left' | 'right' = 'right';
+
+	$: liked = currentReactions.some((r) => r.type === 'heart');
 
 	function toggleLike() {
 		liked = !liked;

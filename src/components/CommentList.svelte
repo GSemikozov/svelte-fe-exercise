@@ -10,9 +10,6 @@
 </script>
 
 <div class="divide-y-2 divide-surface-200 border-b-2 border-surface-200">
-	{#if comments.length === 0}
-		<p class="text-sm text-zinc-400 py-4">No comments yet</p>
-	{/if}
 	{#each comments as comment (comment.id)}
 		<CommentCard
 			{comment}

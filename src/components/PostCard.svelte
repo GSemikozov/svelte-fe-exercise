@@ -4,6 +4,7 @@
 	import { MoreHorizontal } from 'lucide-svelte';
 	import ReactionBar from './ReactionBar.svelte';
 	import ReactionControls from './ReactionControls.svelte';
+	import { handleUpdateReactions } from '$lib/utils/handleUpdateReactions';
 
 	export let post: Post;
 	export let commentCount: number | null = null;
@@ -13,26 +14,7 @@
 
 	function handleReact(event: CustomEvent<{ type: string; remove?: boolean }>) {
 		const { type, remove } = event.detail;
-		const index = reactions.findIndex((r) => r.type === type);
-
-		if (remove) {
-			if (index !== -1) {
-				reactions = [...reactions.slice(0, index), ...reactions.slice(index + 1)];
-			}
-			return;
-		}
-
-		if (index !== -1) {
-			// Update as a new object
-			const updated = [...reactions];
-			updated[index] = {
-				...updated[index],
-				count: updated[index].count + 1
-			};
-			reactions = updated;
-		} else {
-			reactions = [...reactions, { type, count: 1 }];
-		}
+		reactions = handleUpdateReactions(reactions, type, remove);
 	}
 </script>
 
