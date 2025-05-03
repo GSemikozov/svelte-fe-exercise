@@ -12,3 +12,11 @@ npm run dev
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
+
+## TODO
+
+1. change scrollTo animation
+2. add popover as a separate lib (for instance, `https://floating-ui-svelte.vercel.app/examples/popovers`)
+3. double check all colors, sizes and spaces based on figma
+4. provide better types
+5. improve ReplyInput (autoResize, submit, validation)

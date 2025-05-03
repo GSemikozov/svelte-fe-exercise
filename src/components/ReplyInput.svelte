@@ -88,6 +88,7 @@
 		on:keydown={handleKeyDown}
 		on:input={autoResize}
 		placeholder={`Reply to ${authorName}`}
+		aria-describedby={error ? 'comment-error' : undefined}
 		rows="1"
 		class="w-full pl-10 pr-10 py-2 rounded-[40px] bg-surface-100 text-base text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-auto max-h-[144px]"
 	></textarea>
