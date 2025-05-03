@@ -3,8 +3,6 @@
 	import { createEventDispatcher } from 'svelte';
 	import { Heart, HeartIcon, Smile, SmileIcon } from 'lucide-svelte';
 
-	export let currentReactions: { type: string; count: number }[] = [];
-
 	const dispatch = createEventDispatcher();
 	const allReactions = [
 		'angry',
@@ -17,7 +15,7 @@
 		'disappointed-face',
 		'face-exhaling',
 		'party-popper'
-	]; // add all?
+	]; // todo: add all? + type
 
 	// Popover logic
 	let showPopover = false;
@@ -25,11 +23,10 @@
 	let popoverRef: HTMLDivElement;
 	let position: 'left' | 'right' = 'right';
 
-	$: liked = currentReactions.some((r) => r.type === 'heart');
+	$: liked = false;
 
 	function toggleLike() {
 		liked = !liked;
-		dispatch('react', { type: 'heart', remove: !liked });
 	}
 
 	function react(type: string) {

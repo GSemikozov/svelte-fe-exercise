@@ -20,3 +20,4 @@ npm run dev -- --open
 3. double check all colors, sizes and spaces based on figma
 4. provide better types
 5. improve ReplyInput (autoResize, submit, validation)
+6. improve add reaction logic (atm, clicking on the same icon in popover reaction will be added twice too)
